@@ -11,7 +11,7 @@ import logging
 import os
 import platform
 import random
-import discord
+import discord 
 
 from dotenv import load_dotenv
 from discord.ext import commands, tasks
@@ -178,7 +178,7 @@ async def on_command_error(context: Context, error) -> None:
     elif isinstance(error, commands.BotMissingPermissions):
         embed = discord.Embed(
             description="I am missing the permission(s) `"
-            + ", ".join(error.missing_permissions)
+            + ", ".join(error.missing_permissions) 
             + "` to fully perform this command!",
             color=0xE02B2B,
         )
