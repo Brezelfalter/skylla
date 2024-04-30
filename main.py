@@ -113,7 +113,7 @@ async def status_task() -> None:
     """
     Setup the game status task of the bot.
     """
-    v_status = f"with magic pakets (v{bot.config['version']})"
+    v_status = f"with tunnels (v{bot.config['version']})"
     statuses = [v_status]
     await bot.change_presence(activity=discord.Game(random.choice(statuses)))
 
