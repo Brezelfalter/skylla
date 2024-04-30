@@ -13,13 +13,13 @@ class Ngrok(commands.Cog):
     @commands.command(brief="")
     async def ngrok(self, ctx, protocol, port):
         os.system(f"ngrok {protocol} {port} > /dev/null &")
-        
+
         time.sleep(3)
 
         output = os.popen('curl http://localhost:4040/api/tunnels | jq ".tunnels[0].public_url"').read()
         output = output.replace('"', '')
 
-        await ctx.send(f"Public sting for command `ngrok {protocol} {port}:\n\n{output}")
+        await ctx.send(f"Public sting for command `ngrok {protocol} {port}`:\n\n{output}")
 
 
     @commands.command(brief="Kills all ngrok sessions.")
